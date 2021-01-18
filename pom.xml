@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tcs</groupId>
-	<artifactId>service</artifactId>
+	<artifactId>getecmrrefdata</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>getecmrrefdata</name>
 	<description>Get Oracle Data</description>

@@ -7,8 +7,9 @@ framework: java11
 
 database:
   required: false
-
-
+resources:
+  memory: "1.5Gi"
+  cpu: "1"
 ingress:
   required: true
   site: getecmrrefdata

@@ -47,50 +47,12 @@ spec:
                           port: 8080
                       timeoutSeconds: 5
                   resources:
-                      requests:
-                          memory: 500Mi
-{{- if .Values.database.required }}
-                  env:
-                      - name: POSTGRES_DATABASE
-                        value: {{ .Values.name }}-db
-                      - name: POSTGRES_USER
-                        value: "admin"
-                      - name: POSTGRES_PASSWORD
-                        value: "admin"
-                      {{if eq .Values.framework "operator-sdk"}}
-                      - name: WATCH_NAMESPACE
-                        valueFrom:
-                          fieldRef:
-                            apiVersion: v1
-                            fieldPath: metadata.namespace
-                      - name: POD_NAME
-                        valueFrom:
-                          fieldRef:
-                            apiVersion: v1
-                            fieldPath: metadata.name
-                      - name: OPERATOR_NAME
-                        value: {{.Name}}
-                      - name: PLATFORM_TYPE
-                        value: {{.PlatformType}}
-                      {{end}}
-{{- end }}
-                        {{if and (eq .Values.framework "operator-sdk") (not .Values.database.required)}}
-                  env:
-                      - name: WATCH_NAMESPACE
-                        valueFrom:
-                          fieldRef:
-                            apiVersion: v1
-                            fieldPath: metadata.namespace
-                      - name: POD_NAME
-                        valueFrom:
-                          fieldRef:
-                            apiVersion: v1
-                            fieldPath: metadata.name
-                      - name: OPERATOR_NAME
-                        value: {{.Name}}
-                      - name: PLATFORM_TYPE
-                        value: {{.PlatformType}}
-                        {{end}}
+                    requests:
+                      memory: {{ .Values.resources.memory | quote }}
+                      cpu: {{ .Values.resources.cpu | quote }}
+                    limits:
+                      memory: {{ .Values.resources.memory | quote }}
+                      cpu: {{ .Values.resources.cpu | quote }}
                   terminationMessagePath: /dev/termination-log
                   terminationMessagePolicy: File
             dnsPolicy: ClusterFirst

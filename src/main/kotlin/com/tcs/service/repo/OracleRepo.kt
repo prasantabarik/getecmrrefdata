@@ -1,6 +1,6 @@
 package com.tcs.service.repo
 
-//import com.tcs.service.model.ASN
+
 import com.tcs.service.model.ASN2
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query

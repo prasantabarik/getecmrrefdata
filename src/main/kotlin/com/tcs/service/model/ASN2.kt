@@ -15,41 +15,41 @@ data class ASN2(
 // var Id:Int,
  @Id
  @Column(name = "DEPARTUREID")
- var departureId:String,
+ var departureId:String = "",
  @Id
  @Column(name = "GLNSHIPFROM")
- var glnshipfrom:String,
+ var glnshipfrom:String = "",
  @Id
  @Column(name = "GLNSHIPTO")
- var glnshipto:String,
+ var glnshipto:String = "",
  @Id
  @Column(name = "REFERENCENUMBEROFTRIP")
- var referencenumberoftrip:String,
+ var referencenumberoftrip:String = "",
  @Id
  @Column(name = "FINISHEDLOADINGDATETIME")
- var finishedloadingdatetime: Date,
+ var finishedloadingdatetime: Date = Date(),
  @Id
  @Column(name = "CONTAINERTYPEGTINPRIMARYCONTAI")
- var containertypegtinprimarycontai:String,
+ var containertypegtinprimarycontai:String = "",
  @Id
  @Column(name = "SHIPUNITSSCC")
- var shipunitsscc:String,
+ var shipunitsscc:String = "",
  @Id
  @Column(name = "REFNUMBERPOINTOFDESTINATION")
- var refnumberpointofdestination:String,
+ var refnumberpointofdestination:String = "",
  @Id
  @Column(name = "TOTALLOADWEIGHT")
- var totalloadweight:Int,
+ var totalloadweight:Int = 0,
  @Id
  @Column(name = "UOMWEIGHT")
- var uomweight:String,
+ var uomweight:String = "",
  @Id
  @Column(name = "NUMBEROFPRIMARYCONTAINERS")
- var numberofprimarycontainers:Int,
+ var numberofprimarycontainers:Int = 0,
  @Id
  @Column(name = "CONTAINERTYPEGTIN")
- var containertypegtin:String,
+ var containertypegtin:String = "",
  @Id
  @Column(name="NUMBEROFCONTAINERS")
-        var numberofcontainers:Int
+        var numberofcontainers:Int = 0
         ) : Serializable

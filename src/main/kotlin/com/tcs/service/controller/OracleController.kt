@@ -18,10 +18,10 @@ import javax.persistence.EntityManager
 @RestController
 class OracleController(private val serv: OracleService, private val em: EntityManager) {
 
-    @GetMapping("/asn")
-    fun getASN(): ResponseEntity<MutableList<ASN2>> {
-        return ResponseEntity.ok().body(serv.getAll())
-    }
+//    @GetMapping("/asn")
+//    fun getASN(): ResponseEntity<MutableList<ASN2>> {
+//        return ResponseEntity.ok().body(serv.getAll())
+//    }
 
     @GetMapping("/depId/{departmentId}")
     fun getBy(@PathVariable departmentId: String): ResponseEntity<ServiceResponse> {
